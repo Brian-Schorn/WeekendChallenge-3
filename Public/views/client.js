@@ -74,7 +74,7 @@ function computeValues(event) {
         url: '/add',
         type: 'POST',
         data: formData,
-        success: getResult
+        success: appendResult
       })
       break;
     case "subtract":
@@ -82,7 +82,7 @@ function computeValues(event) {
       url: '/subtract',
       type: 'POST',
       data: formData,
-      success: getResult
+      success: appendResult
     })
     break;
     case "multiply":
@@ -90,7 +90,7 @@ function computeValues(event) {
         url: '/multiply',
         type: 'POST',
         data: formData,
-        success: getResult
+        success: appendResult
       })
       break;
     case "divide":
@@ -98,7 +98,7 @@ function computeValues(event) {
         url: '/divide',
         type: 'POST',
         data: formData,
-        success: getResult
+        success: appendResult
       })
       break;
   }
@@ -114,15 +114,15 @@ function computeValues(event) {
 }
 
 
-function getResult() {
-  // console.log("Get Result");
-  //Once the object is sent we then retrieve the result from the server
-  $.ajax({
-    url: '/result',
-    type: 'GET',
-    success: appendResult
-  });
-}
+// function getResult() {
+//   // console.log("Get Result");
+//   //Once the object is sent we then retrieve the result from the server
+//   $.ajax({
+//     url: '/result',
+//     type: 'GET',
+//     success: appendResult
+//   });
+// }
 
 function appendResult(result) {
   //Once we retrieve the result we display it on the DOM
