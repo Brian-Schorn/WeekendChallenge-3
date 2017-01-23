@@ -67,19 +67,50 @@ function computeValues(event) {
   var formData = new Object();
   formData.value1 = inputOne;
   formData.value2 = inputTwo;
-  formData.valueOperator = inputOperator;
-  // console.log(formData);
 
-  // var formData = $(this).serialize();
-  // console.log(formData);
+  switch(inputOperator) {
+    case "add":
+      $.ajax({
+        url: '/add',
+        type: 'POST',
+        data: formData,
+        success: getResult
+      })
+      break;
+    case "subtract":
+    $.ajax({
+      url: '/subtract',
+      type: 'POST',
+      data: formData,
+      success: getResult
+    })
+    break;
+    case "multiply":
+      $.ajax({
+        url: '/multiply',
+        type: 'POST',
+        data: formData,
+        success: getResult
+      })
+      break;
+    case "divide":
+      $.ajax({
+        url: '/divide',
+        type: 'POST',
+        data: formData,
+        success: getResult
+      })
+      break;
+  }
+
 
   //Sends the object containing both values and the operator to the server
-  $.ajax({
-    url: '/compute',
-    type: 'POST',
-    data: formData,
-    success: getResult
-  });
+  // $.ajax({
+  //   url: '/compute',
+  //   type: 'POST',
+  //   data: formData,
+  //   success: getResult
+  // });
 }
 
 
