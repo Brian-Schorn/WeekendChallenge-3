@@ -1,19 +1,55 @@
+var inputOne = 0;
+var inputTwo = 0;
+var inputOperator = 'add';
+var justResult = false;
+
+
 $(function(){
   console.log('document loaded');
 
+
+  $('#calcForm').on('click','.number', inputValue);
+  $('#calcForm').on('click','.operator', inputOper);
   $('#calcForm').on('submit', computeValues);
   $('#calcForm').on('reset', resetForm);
 
 
 });
 
+function inputOper(event) {
+
+  var input = $(this).data('value');
+  inputOperator = input;
+  inputOne = $('#result').val();
+  $('#result').val("");
+}
+
+
+function inputValue(event) {
+  if(justResult){
+    $('#result').val("");
+  }
+  justResult = false;
+  var input = $(this).data('value');
+  $('#result').val($('#result').val()+input);
+}
 
 function computeValues(event) {
+  // console.log("equal pressed");
+  justResult = true;
   event.preventDefault();
-  $('#result').empty();
-
-  var formData = $(this).serialize();
+  inputTwo = $('#result').val();
+  // console.log(inputOne);
+  // console.log(inputTwo);
+  // console.log(inputOperator);
+  var formData = new Object();
+  formData.value1 = inputOne;
+  formData.value2 = inputTwo;
+  formData.valueOperator = inputOperator;
   console.log(formData);
+
+  // var formData = $(this).serialize();
+  // console.log(formData);
 
   $.ajax({
     url: '/compute',
@@ -34,11 +70,10 @@ function getResult() {
 }
 
 function appendResult(result) {
-  $('#result').text("That expression returns the result of: " + result);
+  $('#result').val(result);
   console.log(result);
 }
 
 function resetForm() {
-  $(this).closest('form').find('input[type=text], textarea').val("");
-  $('#result').empty();
+  $("#result").empty();
 }

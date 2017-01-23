@@ -14,8 +14,8 @@ app.get('/', function(req, res) {
 });
 
 app.post('/compute', function(req, res) {
-  // console.log(req.body.calcDropdown);
-  switch(req.body.calcDropdown) {
+  console.log(req.body);
+  switch(req.body.valueOperator) {
     case "add":
       console.log("add");
       result = Number(req.body.value1) + Number(req.body.value2);
