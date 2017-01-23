@@ -14,36 +14,43 @@
     <link rel="stylesheet" type="text/css" href="./views/mystyle.css" />
   </head>
   <body>
+    <div class="container-fluid">
     <form id="calcForm">
       <!-- <label>Value 1</label>
       <input type="text" name="value1" />
 
       <label>Value 2</label>
       <input type="text" name="value2" /> -->
-      <input type="text" name="result" value="0" id="result" class="col-xs-8 col-xs-offset-2" />
-      <br />
-      <input type="button" value="1" class ="number col-xs-2 col-xs-offset-2" data-value="1" />
-      <input type="button" value="2" class ="number col-xs-2" data-value="2" />
-      <input type="button" value="3" class ="number col-xs-2" data-value="3" />
-      <input type="button" value="+" class ="operator col-xs-2" data-value="add" />
-      <br />
-      <input type="button" value="4" class ="number col-xs-2 col-xs-offset-2" data-value="4" />
-      <input type="button" value="5" class ="number col-xs-2" data-value="5" />
-      <input type="button" value="6" class ="number col-xs-2" data-value="6" />
-      <input type="button" value="-" class ="operator col-xs-2" data-value="subtract" />
-      <br />
-      <input type="button" value="7" class ="number col-xs-2 col-xs-offset-2" data-value="7" />
-      <input type="button" value="8" class ="number col-xs-2" data-value="8" />
-      <input type="button" value="9" class ="number col-xs-2" data-value="9" />
-      <input type="button" value="*" class ="operator col-xs-2" data-value="multiply" />
-      <br />
-      <input type="button" value="0" class ="number col-xs-2 col-md-offset-2" data-value="0" />
-      <input type="button" value="." class ="number col-xs-2" data-value="." />
-      <input type="reset" value="Clr" class = "col-xs-2" />
-      <input type="button" value="/" class ="operator col-xs-2" data-value="divide" />
-      <br />
-      <input type="submit" value="=" class="col-xs-8 col-xs-offset-2" />
-
+      <div class="row">
+      <input type="text" name="result" value="0" id="result" class="col-xs-8 col-xs-offset-2" readonly/>
+      </div>
+      <div class="row">
+        <div class="col-xs-2 col-xs-offset-2"><input type="button" class="number btn btn-block" value="1" data-value="1" /></div>
+        <div class="col-xs-2"><input type="button" value="2" class="number btn btn-block" data-value="2" /></div>
+        <div class="col-xs-2"><input type="button" value="3" class="number btn btn-block" data-value="3" /></div>
+        <div class="col-xs-2"><input type="button" value="+" class="operator btn btn-block" data-value="add" /></div>
+    </div>
+    <div class="row">
+      <div class="col-xs-2 col-xs-offset-2"><input type="button" value="4" class ="number btn btn-block" data-value="4" /></div>
+      <div class="col-xs-2"><input type="button" value="5" class ="number btn btn-block" data-value="5" /></div>
+      <div class="col-xs-2"><input type="button" value="6" class ="number btn btn-block" data-value="6" /></div>
+      <div class="col-xs-2"><input type="button" value="-" class ="operator btn btn-block" data-value="subtract" /></div>
+    </div>
+    <div class="row">
+      <div class="col-xs-2 col-xs-offset-2"><input type="button" value="7" class ="number btn btn-block" data-value="7" /></div>
+      <div class="col-xs-2"><input type="button" value="8" class ="number btn btn-block" data-value="8" /></div>
+      <div class="col-xs-2"><input type="button" value="9" class ="number btn btn-block" data-value="9" /></div>
+      <div class="col-xs-2"><input type="button" value="*" class ="operator btn btn-block" data-value="multiply" /></div>
+    </div>
+    <div class="row">
+      <div class="col-xs-2 col-xs-offset-2"><input type="button" value="0" class ="number btn btn-block" data-value="0" /></div>
+      <div class="col-xs-2"><input type="button" value="." class ="number btn btn-block" data-value="." /></div>
+      <div class="col-xs-2"><input type="reset" value="Clr" class = "btn btn-block" /></div>
+      <div class="col-xs-2"><input type="button" value="/" class ="operator btn btn-block" data-value="divide" /></div>
+    </div>
+    <div class="row">
+      <div class="col-xs-8 col-xs-offset-2"><input type="submit" value="=" class="btn btn-block" /></div>
+    </div>
 
       <!-- <select name="calcDropdown">
         <option value="add">Add</option>
@@ -55,6 +62,7 @@
       <!-- <input type="submit" value="Compute" />
       <input type="reset" value="Clear" /> -->
     </form>
+    </div>
     <!-- <section id="result">
 
 
