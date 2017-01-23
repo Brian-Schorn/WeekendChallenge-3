@@ -14,7 +14,10 @@ app.get('/', function(req, res) {
 });
 
 app.post('/compute', function(req, res) {
-  console.log(req.body);
+  // console.log(req.body);
+  //Determines which operator was selected
+  //Then performs the desired operation on the
+  //provided value1 and value2 storing the result in 'result'
   switch(req.body.valueOperator) {
     case "add":
       console.log("add");
@@ -41,7 +44,8 @@ app.post('/compute', function(req, res) {
 });
 
 app.get('/result', function(req, res) {
-  console.log(result);
+  //Returns the result on request
+  // console.log(result);
   res.send(String(result));
 
 });
