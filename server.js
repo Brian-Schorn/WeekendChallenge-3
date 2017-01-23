@@ -20,6 +20,13 @@ app.get('/', function(req, res) {
   res.sendFile(path.join(__dirname, 'public/views/index.html'));
 });
 
+app.get('/result', function(req, res) {
+  //Returns the result on request
+  res.send(String(result));
+
+});
+
+app.listen(3000);
 
 // app.get('/add', function(req, res) {
 //   console.log(req.body);
@@ -68,12 +75,3 @@ app.get('/', function(req, res) {
 //       break;
 //   }
 // });
-
-app.get('/result', function(req, res) {
-  //Returns the result on request
-  // console.log(result);
-  res.send(String(result));
-
-});
-
-app.listen(3000);
