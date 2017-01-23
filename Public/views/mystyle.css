@@ -7,6 +7,18 @@
 .btn {
   margin: 2px;
 }
+
+.number {
+  background-color: green;
+}
+
+.operator {
+  background-color: red;
+}
+
+.submit, .reset {
+  background-color: grey;
+}
 /*div {
   border: solid 1px black;
 }*/
