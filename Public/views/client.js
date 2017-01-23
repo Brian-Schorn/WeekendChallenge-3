@@ -2,6 +2,7 @@ var inputOne = 0;
 var inputTwo = 0;
 var inputOperator = 'add';
 var justResult = true;
+var isThereADecimal = false;
 
 
 $(function(){
@@ -24,10 +25,12 @@ function inputOper(event) {
   //Sets inputOne to the value of the result field and
   //inputOperator to the clicked operator button and
   //resets the field
+
   var input = $(this).data('value');
   inputOperator = input;
   inputOne = $('#result').val();
   $('#result').val("");
+  isThereADecimal = false;
 }
 
 
@@ -35,11 +38,18 @@ function inputValue(event) {
   //If a result was just returned, clears the field on input
   if(justResult){
     $('#result').val("");
+    isThereADecimal = false;
   }
   justResult = false;
   //Adds the value of the clicked button to the input field
   var input = $(this).data('value');
-  $('#result').val($('#result').val()+input);
+  if ((!isThereADecimal) || !(input == ".")){
+    $('#result').val($('#result').val()+input);
+  }
+  if (input == "."){
+    isThereADecimal = true;
+  }
+
 }
 
 function computeValues(event) {
@@ -49,6 +59,7 @@ function computeValues(event) {
   event.preventDefault();
   //sets inputTwo to the value of the result field
   inputTwo = $('#result').val();
+  isThereADecimal = false;
   // console.log(inputOne);
   // console.log(inputTwo);
   // console.log(inputOperator);
