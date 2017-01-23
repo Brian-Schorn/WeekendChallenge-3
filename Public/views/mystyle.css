@@ -1,6 +1,7 @@
 #result {
   text-align: right;
   border: solid 1px black;
+  width: 100%;
 }
 
 .btn {
